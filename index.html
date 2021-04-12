@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Challenge | Quiz Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="home">
+            <i class="fas fa-home"></i>
+        </a>
+        <div class="score">
+            <span class="user__score">0</span>/<span class="current__score">0</span>
+        </div>
+    </header>
+    <main class="quiz">
+        <section class="quiz__container">
+            <div class="quiz__question">
+                <div class="quiz__imgContainer">
+                    <img class="quiz__img" src="" alt="">
+                </div>
+                <h2 class="quiz__question-header">Question Title</h2>
+            </div>
+            <div class="quiz__answers">
+                <button class="quiz__answer" id="quiz__answer-a" data-correct="a">A</button>  
+                <button class="quiz__answer" id="quiz__answer-b" data-correct="b">B</button>  
+                <button class="quiz__answer" id="quiz__answer-c" data-correct="c">C</button>  
+                <button class="quiz__answer" id="quiz__answer-d" data-correct="d">D</button>  
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="clock">
+            <h4 class="clock__timeRemaining">15</h4>
+        </div>
+        <button class="nextBtn">Next</button>
+    </footer>
+    <script src="script.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 16px;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: linear-gradient(to right, #acb6e5, #95c9f8, #7cddff, #72eef9, #86fde8);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.quiz {
+  width: 50%;
+  margin: 0 auto;
+}
+.quiz .quiz__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 100px;
+}
+.quiz .quiz__container .quiz__question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+}
+.quiz .quiz__container .quiz__question h2 {
+  font-size: 3rem;
+  text-align: center;
+  color: #fff;
+}
+.quiz .quiz__container .quiz__question .quiz__imgContainer {
+  width: 30%;
+  margin: 20px auto;
+}
+.quiz .quiz__container .quiz__question .quiz__imgContainer img {
+  width: 100%;
+}
+.quiz .quiz__container .quiz__question .quiz__imgContainer.hidden {
+  display: none;
+}
+.quiz .quiz__container .quiz__answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1em;
+}
+.quiz .quiz__container .quiz__answers .quiz__answer {
+  background-color: rgba(0, 0, 0, 0.2);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 0;
+  height: 70px;
+  border-radius: 15px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.quiz .quiz__container .quiz__answers .quiz__answer:hover {
+  background-color: #2F80ED;
+}
+.quiz .quiz__container .quiz__answers .quiz__answer:disabled {
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: default;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.footer .clock {
+  margin-bottom: 30px;
+}
+.footer .clock .clock__timeRemaining {
+  font-size: 2rem;
+  color: #fff;
+}
+.footer .nextBtn {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  width: 130px;
+  height: 45px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  position: fixed;
+  bottom: 20px;
+  outline: none;
+}
+.footer .nextBtn:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 0.9);
+}
