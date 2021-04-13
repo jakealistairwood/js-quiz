@@ -23,7 +23,20 @@ body {
   align-items: center;
   width: 80%;
   margin: 0 auto;
-  padding: 100px 0;
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+@media screen and (max-width: 1600px) {
+  .navbar {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .navbar {
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
 }
 .navbar a {
   color: #fff;
@@ -31,15 +44,50 @@ body {
 .navbar a i {
   font-size: 2rem;
 }
+@media screen and (max-width: 600px) {
+  .navbar a i {
+    font-size: 1.4rem;
+  }
+}
 .navbar div span {
   color: #fff;
   font-size: 2rem;
   font-weight: 700;
 }
+@media screen and (max-width: 600px) {
+  .navbar div span {
+    font-size: 1.4rem;
+  }
+}
 
 .quiz {
   width: 50%;
   margin: 0 auto;
+}
+@media screen and (max-width: 1600px) {
+  .quiz {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quiz {
+    margin-top: 100px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quiz {
+    margin-top: 10px;
+    width: 85%;
+  }
 }
 .quiz .quiz__container {
   display: flex;
@@ -50,11 +98,34 @@ body {
   padding: 20px;
   margin-bottom: 100px;
 }
+@media screen and (max-width: 1600px) {
+  .quiz .quiz__container {
+    margin-bottom: 50px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container {
+    border-radius: 6px;
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+}
 .quiz .quiz__container .quiz__question {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 30px 0;
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__question {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .quiz .quiz__container .quiz__question {
+    margin-bottom: 10px;
+  }
 }
 .quiz .quiz__container .quiz__question h2 {
   font-size: 3rem;
@@ -62,12 +133,42 @@ body {
   color: #fff;
   margin: 20px 0;
 }
+@media screen and (max-width: 1600px) {
+  .quiz .quiz__container .quiz__question h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__question h2 {
+    font-size: 1.2rem;
+    padding: 0px 5px;
+  }
+}
 .quiz .quiz__container .quiz__question .quiz__imgContainer {
   width: 30%;
   margin: 20px auto;
 }
+@media screen and (max-width: 1024px) {
+  .quiz .quiz__container .quiz__question .quiz__imgContainer {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__question .quiz__imgContainer {
+    margin: 0;
+    width: 90%;
+  }
+}
 .quiz .quiz__container .quiz__question .quiz__imgContainer img {
   width: 100%;
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__question .quiz__imgContainer img {
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
 }
 .quiz .quiz__container .quiz__question .quiz__imgContainer.hidden {
   display: none;
@@ -76,6 +177,13 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1em;
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__answers {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 20px;
+    padding-bottom: 20px;
+  }
 }
 .quiz .quiz__container .quiz__answers .quiz__answer {
   background-color: rgba(0, 0, 0, 0.2);
@@ -88,6 +196,24 @@ body {
   outline: none;
   cursor: pointer;
   transition: 0.3s ease-in-out;
+}
+@media screen and (max-width: 1600px) {
+  .quiz .quiz__container .quiz__answers .quiz__answer {
+    height: 60px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quiz .quiz__container .quiz__answers .quiz__answer {
+    height: 40px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .quiz .quiz__container .quiz__answers .quiz__answer {
+    font-size: 0.7rem;
+    height: 30px;
+  }
 }
 .quiz .quiz__container .quiz__answers .quiz__answer:hover {
   background-color: #2F80ED;
@@ -117,6 +243,16 @@ body {
   font-size: 3.2rem;
   color: #fff;
 }
+@media screen and (max-width: 1600px) {
+  .footer .clock .clock__timeRemaining {
+    font-size: 1.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .footer .clock .clock__timeRemaining {
+    font-size: 1.2rem;
+  }
+}
 .footer .nextBtn {
   background-color: rgba(0, 0, 0, 0.2);
   color: #fff;
@@ -131,6 +267,17 @@ body {
   position: fixed;
   bottom: 20px;
   outline: none;
+}
+@media screen and (max-width: 400px) {
+  .footer .nextBtn {
+    font-size: 0.8rem;
+    height: 30px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .footer .nextBtn {
+    position: relative;
+  }
 }
 .footer .nextBtn:hover {
   background-color: white;
