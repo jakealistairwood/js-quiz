@@ -25,6 +25,17 @@ body {
   margin: 0 auto;
   padding: 100px 0;
 }
+.navbar a {
+  color: #fff;
+}
+.navbar a i {
+  font-size: 2rem;
+}
+.navbar div span {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+}
 
 .quiz {
   width: 50%;
@@ -83,6 +94,12 @@ body {
 .quiz .quiz__container .quiz__answers .quiz__answer:disabled {
   background-color: rgba(0, 0, 0, 0.2);
   cursor: default;
+}
+.quiz .quiz__container .quiz__answers .quiz__answer.correct {
+  background-color: #60A561;
+}
+.quiz .quiz__container .quiz__answers .quiz__answer.incorrect {
+  background-color: #ff8269;
 }
 
 .footer {

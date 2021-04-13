@@ -6,8 +6,8 @@ const answerA = document.querySelector('#quiz__answer-a');
 const answerB = document.querySelector('#quiz__answer-b');
 const answerC = document.querySelector('#quiz__answer-c');
 const answerD = document.querySelector('#quiz__answer-d');
-const imgSrc = document.querySelector('.quiz__img');
-const imgAlt = document.querySelector('.quiz__img');
+const img = document.querySelector('.quiz__img');
+const imgContainer = document.querySelector('.quiz__imgContainer');
 
 const correctMessages = ["Congratulations! Quizmaster in the making!", "You're doing great! Keep it up!", "Don't end this winning streak!", "Look at you go!"];
 const losingMessages = ["Looks like you need to brush up on your trivia!", "So close! Better luck next time", "No winning streak this time!"];
@@ -18,6 +18,8 @@ const randomLosingMessage = losingMessages[Math.floor(Math.random() * losingMess
 let currentQuestion = 0;
 console.log(quizData[currentQuestion]);
 
+
+// Function to render Quiz Data to HTML
 const createQuestionHTML = () => {
     const currentQuizData = quizData[currentQuestion];
     question.innerText = currentQuizData.question;
@@ -25,13 +27,22 @@ const createQuestionHTML = () => {
     answerB.innerText = currentQuizData.answers[1].answer;
     answerC.innerText = currentQuizData.answers[2].answer;
     answerD.innerText = currentQuizData.answers[3].answer;
-    imgSrc.src = currentQuizData.imgSrc;
-    imgAlt.alt = currentQuizData.imgAlt;
+    img.src = currentQuizData.imgSrc;
+    img.alt = currentQuizData.imgAlt;
     answerA.dataset.correct = currentQuizData.answers[0].isCorrect;
     answerB.dataset.correct = currentQuizData.answers[1].isCorrect;
     answerC.dataset.correct = currentQuizData.answers[2].isCorrect;
     answerD.dataset.correct = currentQuizData.answers[3].isCorrect;
 }
+
+/* Function to render next question data 
+    1. Update currentQuestion index
+    2. Update current HTML to render new question
+    3. Reset necessary functions when new question updated
+        - Reset countdown
+        - Change background color if necessary
+        - Enable answer buttons
+*/
 
 const renderNextQuestion = () => {
     const nextQuestionBtn = document.querySelector('.nextBtn');
@@ -45,28 +56,36 @@ const renderNextQuestion = () => {
 
 let timeLeft = document.querySelector('.clock__timeRemaining').innerHTML;
 
+
+// Countdown initiation functionality
 const countdown = () => {
     timeLeft--;
     document.querySelector('.clock__timeRemaining').innerHTML = timeLeft;
-    
+    // When timer hits 3 seconds left -> change font color to red
     if(timeLeft <= 3) {
         document.querySelector('.clock__timeRemaining').style.color = "#EF233C";
     } 
-
+    /* When timer hits 0 
+        1. Stop Countdown
+        2. Disable buttons so user can't choose answer
+        3. Change seconds left to say a message such as 'time's up...' and update font to white
+        4. Change window background color to some sort of red
+        5. Update score counter
+    */
     if(timeLeft <= 0) {
         clearInterval(runCountdown);
         disableAnswers();
         document.querySelector('.clock__timeRemaining').innerHTML = "Time's up...";
         document.querySelector('.clock__timeRemaining').style.color = "#fff";
         document.body.style.backgroundImage = "linear-gradient(to right, #fd746c, #fe7b6a, #ff8269, #ff8968, #ff9068)";
-        // When timer hits 0, disable buttons so user can't click on answer
+        updateTotalScore();
     }
 };
 
 const runCountdown = setInterval(countdown, 1500);
 runCountdown;
 
-// Function to prevent user from clicking an answer once the timer has run out or an answer has already been chosen.
+// Functions to prevent/enable user from clicking an answer.
 const disableAnswers = () => {
     const answers = document.querySelectorAll('.quiz__answer');
     answers.forEach(answer => {
@@ -85,14 +104,27 @@ const validateAnswer = (selectedAnswer) => {
     const isCorrect = selectedAnswer.dataset.correct;
 
     if(isCorrect === 'true') {
-        selectedAnswer.style.backgroundColor = "#60A561";
+        selectedAnswer.classList.add('correct');
         document.querySelector('.clock__timeRemaining').innerHTML = randomWinningMessage;
+        updateUserScore();
     } else {
-        selectedAnswer.style.backgroundColor = "#ff8269";
+        selectedAnswer.classList.add('incorrect');
         document.querySelector('.clock__timeRemaining').innerHTML = randomLosingMessage;
     }
-
     disableAnswers();
+    updateTotalScore();
+}
+
+const updateUserScore = () => {
+    let userScore = document.querySelector('.user__score').innerHTML;
+    userScore++;
+    document.querySelector('.user__score').innerHTML = userScore;
+}
+
+const updateTotalScore = () => {
+    let totalScore = document.querySelector('.total__score').innerHTML;
+    totalScore++;
+    document.querySelector('.total__score').innerHTML = totalScore;
 }
 
 const bindAnswerEventListeners = () => {
@@ -114,7 +146,8 @@ const resetQuiz = () => {
     document.querySelector('.clock__timeRemaining').innerText = '15';
     const answers = document.querySelectorAll('.quiz__answer');
     answers.forEach(answer => {
-        answer.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+        answer.classList.remove('correct');
+        answer.classList.remove('incorrect');
     })
 }
 

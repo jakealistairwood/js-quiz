@@ -24,8 +24,8 @@ export const quizData = [
     },
     {
         question: 'In which US State would you find Yosemite National Park?',
-        imgSrc: null,
-        imgAlt: null,
+        imgSrc: 'img/yosemite.jpg',
+        imgAlt: 'Yosemite-Valley-By-Aniket-Deole',
         answers: [
             {
                 answer: 'Wyoming',
@@ -47,6 +47,8 @@ export const quizData = [
     },
     {
         question: 'Which of these is not a framework?',
+        imgSrc: '',
+        imgAlt: '',
         answers: [
             {
                 answer: 'React',

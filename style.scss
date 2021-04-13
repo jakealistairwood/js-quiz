@@ -25,6 +25,22 @@ body {
     width: 80%;
     margin: 0 auto;
     padding: 100px 0;
+
+    a {
+        color: #fff;
+
+        i {
+            font-size: 2rem;
+        }
+    }
+
+    div {
+        span {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    }
 }
 
 .quiz {
@@ -91,6 +107,14 @@ body {
                     background-color: rgba(0, 0, 0, 0.2);
                     cursor: default;
                 }
+            }
+
+            .quiz__answer.correct {
+                background-color: #60A561;
+            }
+
+            .quiz__answer.incorrect {
+                background-color: #ff8269;
             }
         }
     }
