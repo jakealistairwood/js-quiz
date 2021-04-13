@@ -47,8 +47,8 @@ export const quizData = [
     },
     {
         question: 'Which of these is not a framework?',
-        imgSrc: '',
-        imgAlt: '',
+        imgSrc: 'img/js-frameworks.png',
+        imgAlt: 'js-framework-library-icons',
         answers: [
             {
                 answer: 'React',
@@ -64,6 +64,75 @@ export const quizData = [
             },
             {
                 answer: 'Svelte.js',
+                isCorrect: false
+            }
+        ]
+    },
+    {
+        question: 'Name the flag',
+        imgSrc: 'img/np-flag.jpg',
+        imgAlt: 'Flag-of-Nepal',
+        answers: [
+            {
+                answer: 'Bangladesh',
+                isCorrect: false
+            },
+            {
+                answer: 'Pakistan',
+                isCorrect: false
+            },
+            {
+                answer: 'India',
+                isCorrect: false
+            },
+            {
+                answer: 'Nepal',
+                isCorrect: true
+            }
+        ]
+    },
+    {
+        question: 'What is the hardest substance in the human body?',
+        imgSrc: '',
+        imgAlt: '',
+        answers: [
+            {
+                answer: 'Bone',
+                isCorrect: false
+            },
+            {
+                answer: 'Tooth Enamel',
+                isCorrect: true
+            },
+            {
+                answer: 'Tendon',
+                isCorrect: false
+            },
+            {
+                answer: 'Muscle',
+                isCorrect: false
+            }
+        ]
+    },
+    {
+        question: 'Name this famous frontman',
+        imgSrc: 'img/freddiemercury.jpg',
+        imgAlt: 'Picture-of-Freddie-Mercury',
+        answers: [
+            {
+                answer: 'Freddie Mercury',
+                isCorrect: true
+            },
+            {
+                answer: 'David Bowie',
+                isCorrect: false
+            },
+            {
+                answer: 'John Lennon',
+                isCorrect: false
+            },
+            {
+                answer: 'Mick Jagger',
                 isCorrect: false
             }
         ]

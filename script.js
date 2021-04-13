@@ -149,6 +149,7 @@ const resetQuiz = () => {
         answer.classList.remove('correct');
         answer.classList.remove('incorrect');
     })
+    document.body.style.backgroundImage = 'linear-gradient(to right, #acb6e5, #95c9f8, #7cddff, #72eef9, #86fde8)';
 }
 
 
